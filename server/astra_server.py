@@ -135,7 +135,6 @@ if __name__ == "__main__":
     audio_thread: threading.Thread = threading.Thread(target=audio_server_loop, daemon=True)
     audio_thread.start()
 
-    print("[БОТ] Попытка подключения к Telegram...")
     try:
         bot.polling(none_stop=True, interval=3, timeout=20)
     except Exception as e:
