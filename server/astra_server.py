@@ -135,7 +135,16 @@ if __name__ == "__main__":
     audio_thread: threading.Thread = threading.Thread(target=audio_server_loop, daemon=True)
     audio_thread.start()
 
-    print("[БОТ] Бот запущен и готов к работе.")
-    try: bot.polling(none_stop=True)
-    except KeyboardInterrupt: print("\nОстановка сервера...")
-    except Exception as e: print(f"\n[БОТ] Критическая ошибка Telegram API: {e}")
+    print("[БОТ] Попытка подключения к Telegram...")
+    try:
+        bot.polling(none_stop=True, interval=3, timeout=20)
+    except Exception as e:
+        print("\n[ВНИМАНИЕ] Чат-бот недоступен (нет интернета)")
+        print("[СЕРВЕР] Переход в автономный режим. Локальная связь активна.")
+        try:
+            while True:
+                time.sleep(1)
+        except KeyboardInterrupt:
+            print("\n[СЕРВЕР] Остановка автономного режима...")
+    except KeyboardInterrupt:
+        print("\n[СЕРВЕР] Остановка сервера...")
