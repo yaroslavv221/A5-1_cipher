@@ -47,15 +47,13 @@ Raw PCM (8kHz/16-bit)
 
 
 ├── client/
-│   ├── desktop_app.py     
-
-│   └── crypto_logic.py    
+│   ├── desktop_app.py
+│   └── crypto_logic.py
 ├── server/
-│   ├── astra_server.py  
- 
-│   └── crypto_logic.py   
-├── requirements.txt      
-└── README.md      
+│   ├── astra_server.py
+│   └── crypto_logic.py
+├── requirements.txt
+└── README.md    
 
 
 ## Установка и запуск
