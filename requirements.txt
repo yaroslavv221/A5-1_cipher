@@ -1,0 +1,4 @@
+Kivy>=2.3.0
+kivymd>=1.1.1
+PyAudio>=0.2.14
+pyTelegramBotAPI>=4.15.2
